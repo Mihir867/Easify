@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post a New Job</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Post a New Job</h1>
+        <form action="/jobs" method ="post">
+            <div class="form-group">
+                <label for="tech">Job Title:</label>
+                <input type="text" class="form-control" id="tech" placeholder="Enter job title" name="tech" >
+            </div>
+            <div class="form-group">
+                <label for="companyname">Company Name:</label>
+                <input type="text" class="form-control" id="companyname" placeholder="Enter company name" name ="companyname">
+            </div>
+            <div class="form-group">
+                <label for="location">Job Location:</label>
+                <input type="text" class="form-control" id="location" placeholder="Enter job location" name="location">
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" class="form-control" id="salary" placeholder="Enter salary" name ="salary">
+            </div>
+            <div class="form-group">
+                <label for="app">Total Positions:</label>
+                <input type="number" class="form-control" id="app" placeholder="Enter total positions" name ="app">
+            </div>
+            
+            <div class="form-group">
+                <label for="date">Apply By:</label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+            <a href="/jobs"><button type="submit" class="btn btn-primary" >Submit</button></a>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<style>
+    body {
+    font-family: sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+</style>
+</html>

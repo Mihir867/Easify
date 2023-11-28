@@ -1,0 +1,32 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container" style="margin-top: 40px;">
+    <div class="row">
+      <% products.forEach(product => { %>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 100%;">
+              <span class="badge bg-secondary" style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">Actively Hiring!!</span>
+              <div class="card-body">
+                <h3><%= product.companyname %></h3>
+                <p>Tech : <%= product.tech %></p>
+                <p>Location : <%= product.location %></p>
+                <p>Salary range - <%= product.salary %> lpa</p>
+                <p> No of applicants- <%= product.app %></p>
+                <p>Apply by -<%= product.date %></p>
+                <h2></h2>
+                <a href="/details/<%= product.id %>" class="btn btn-primary">Go to Details</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+        
+    </div>
+  </div>
+  
+        
+  
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+  
