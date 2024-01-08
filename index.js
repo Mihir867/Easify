@@ -21,11 +21,31 @@ server.get("/", usermodel.getHome);
 server.get("/jobs", usermodel.getProducts);
 server.get('/details/:id', (req, res) => {
   const jobId = parseInt(req.params.id);
-  const product = products.find(product => product.id === jobId);
-  console.log({products, jobId, product});
 
-  res.render('details', product);
+  // Check if jobId is a valid integer
+  if (isNaN(jobId)) {
+    return res.status(400).send('Invalid job ID');
+  }
+
+  const product = products.find(product => product.id === jobId);
+
+  if (!product) {
+    return res.status(404).send('Product not found');
+  }
+
+  console.log({ products, jobId, product });
+
+  res.render('details', {
+    tech: product.tech,
+    companyname: product.companyname,
+    location: product.location,
+    salary: product.salary,
+    date: product.date,
+    app: product.app,
+    /* Add other variables as needed */
+  });
 });
+
 server.get("/postjobs", usermodel.getPostjobs);
 server.post("/jobs", usermodel.addProducts);
 server.post("/register", usercontoller.postRegister);
